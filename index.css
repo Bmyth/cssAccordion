@@ -1,0 +1,72 @@
+.accordionMenu {
+	width: 500px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	background-size: #fff;
+	color: #424242;
+	font: 12px Arial, Verdana, sans-serif;
+}
+.accordionMenu h2 {
+	position: relative;
+	margin: 5px 0;
+	padding: 0;
+}
+.accordionMenu h2:before { /*制作向下三角效果*/
+	position: absolute;
+	top: 15px;
+	right: 10px;
+	width: 0;
+	height: 0;
+	border: 5px solid #fff;
+	border-color: #fff transparent transparent;
+	content: "";
+}
+.accordionMenu h2 a { /*制作手风琴标题栏效果*/
+	background: #8f8f8f;
+	background: -moz-linear-gradient(top, #cecece, #8f8f8f);
+	background: -webkit-gradinet(linear, left top,left bottom, from(#cecece),to(#8f8f8f));
+	background: -webkit-linear-gradient(top, #cecece, #8f8f8f);
+	background: -o-linear-gradient(top, #cecece, #8f8f8f);
+	background: linear-gradient(top, #cecece, #8f8f8f);
+	border-radius: 5px;
+	color: #424242;
+	display: block;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+	padding: 10px 10px;
+	text-shadow: 2px 2px 2px #aeaeae;
+	text-decoration: none;
+}
+.accordionMenu :target h2 a,
+.accordionMenu h2 a:focus,
+.accordionMenu h2 a:hover,
+.accordionMenu h2 a:active {
+	background: #2288dd;
+	background: -moz-linear-gradient(top, #6bb2ff, #2288dd);
+	background: -webkit-gradinet(linear, left top, left bottom,from(#6bb2ff), to(#2288dd));
+	background: -webkit-linear-gradient(top, #6bb2ff, #2288dd);
+	background: -o-linear-gradient(top, #6bb2ff, #2288dd);
+	background: linear-gradient(top, #6bb2ff, #2288dd);
+	color: #fff;
+}
+.accordionMenu p { /* 标题栏对应的内容 */
+	overflow: hidden;
+	height: 0; /*默认栏目内容高度为0，达到隐藏效果*/
+	margin: 0;
+	padding: 0 10px;
+	-webkit-transition: height 0.5s ease-in;
+	-moz-transition: height 0.5s ease-in;
+	-o-transition: height 0.5s ease-in;
+	transition: height 0.5s ease-in;
+}
+
+.accordionMenu :target p {
+	overflow: hidden;
+	height: 20px;
+}
+
+.accordionMenu :target h2:before { /*展开时标题三角效果*/
+	border-color: transparent transparent transparent #fff;
+}
